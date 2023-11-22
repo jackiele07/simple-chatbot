@@ -125,6 +125,7 @@ while True:
             href = urljoin(url, href)
         ipos = href.find('#')
         if ( ipos > 1 ) : href = href[:ipos]
+        if ( href.endswith('.png') or href.endswith('.jpg') or href.endswith('.gif') ) : continue
         if (href.endswith('.pdf')):
             pdf_response = requests.get(href)
             print("Found the pdf link:" + href)
